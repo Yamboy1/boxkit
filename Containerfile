@@ -13,7 +13,7 @@ USER build
 
 COPY extra-packages /
 
-RUN pacman -Syu && \
+RUN sudo pacman -Syu && \
     # Install paru so we can use aur stuff
     git clone https://aur.archlinux.org/paru.git && \
     cd paru && \
