@@ -5,11 +5,11 @@ LABEL com.github.containers.toolbox="true" \
       summary="A cloud-native terminal experience" \
       maintainer="yamboyd1@gmail.com"
       
-RUN useradd --shell=/bin/false build && usermod -L build
-RUN mkdir -p /home/build
-RUN chown build:build /home/build
-RUN echo "build ALL=(ALL) NOPASSWD: /usr/bin/pacman" >> /etc/sudoers
-RUN echo "root ALL=(ALL) NOPASSWD: /usr/bin/pacman" >> /etc/sudoers
+# RUN useradd --shell=/bin/false build && usermod -L build
+# RUN mkdir -p /home/build
+# RUN chown build:build /home/build
+# RUN echo "build ALL=(ALL) NOPASSWD: /usr/bin/pacman" >> /etc/sudoers
+# RUN echo "root ALL=(ALL) NOPASSWD: /usr/bin/pacman" >> /etc/sudoers
 
 RUN ls /usr/bin
 
