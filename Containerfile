@@ -8,9 +8,9 @@ LABEL com.github.containers.toolbox="true" \
 COPY extra-packages /
 RUN pacman -Syu && \
     # Install paru so we can use aur stuff
-    git clone https://aur.archlinux.org/paru.git &&
-    cd paru &&
-    makepkg -si --noconfirm
+    git clone https://aur.archlinux.org/paru.git && \
+    cd paru && \
+    makepkg -si --noconfirm && \
     grep -v '^#' /extra-packages | xargs paru -S --noconfirm
 RUN rm /extra-packages
 
