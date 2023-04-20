@@ -20,7 +20,7 @@ RUN cd ~ && \
     sudo pacman -Syu && \
     # Install paru so we can use aur stuff
     git clone https://aur.archlinux.org/paru-bin.git && \
-    cd paru && \
+    cd paru-bin && \
     makepkg -si --noconfirm && \
     grep -v '^#' /extra-packages | xargs paru -S --noconfirm
 RUN rm /extra-packages
