@@ -11,7 +11,7 @@ RUN chown build:build /home/build
 RUN echo "build ALL=(ALL) NOPASSWD: /usr/bin/pacman" >> /etc/sudoers
 RUN echo "root ALL=(ALL) NOPASSWD: /usr/bin/pacman" >> /etc/sudoers
 
-RUN ls -la /usr/bin
+RUN ls /usr/bin
 
 COPY extra-packages /
 USER build
