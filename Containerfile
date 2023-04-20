@@ -5,7 +5,7 @@ LABEL com.github.containers.toolbox="true" \
       summary="A cloud-native terminal experience" \
       maintainer="yamboyd1@gmail.com"
       
-RUN useradd --no-create-home --shell=/bin/false build && usermod -L build
+RUN useradd --shell=/bin/false build && usermod -L build
 RUN echo "build ALL=(ALL) NOPASSWD: /usr/bin/pacman" >> /etc/sudoers
 RUN echo "root ALL=(ALL) NOPASSWD: /usr/bin/pacman" >> /etc/sudoers
 
@@ -13,7 +13,9 @@ USER build
 
 COPY extra-packages /
 
-RUN sudo pacman -Syu && \
+RUN cd ~ && \
+    pwd && \
+    sudo pacman -Syu && \
     # Install paru so we can use aur stuff
     git clone https://aur.archlinux.org/paru.git && \
     cd paru && \
