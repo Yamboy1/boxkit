@@ -19,7 +19,7 @@ RUN cd ~ && \
     pwd && \
     sudo pacman -Syu && \
     # Install paru so we can use aur stuff
-    git clone https://aur.archlinux.org/paru.git && \
+    git clone https://aur.archlinux.org/paru-bin.git && \
     cd paru && \
     makepkg -si --noconfirm && \
     grep -v '^#' /extra-packages | xargs paru -S --noconfirm
