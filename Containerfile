@@ -11,9 +11,8 @@ RUN chown build:build /home/build
 RUN echo "build ALL=(ALL) NOPASSWD: /usr/bin/pacman" >> /etc/sudoers
 RUN echo "root ALL=(ALL) NOPASSWD: /usr/bin/pacman" >> /etc/sudoers
 
-USER build
-
 COPY extra-packages /
+USER build
 
 RUN cd ~ && \
     pwd && \
@@ -23,9 +22,9 @@ RUN cd ~ && \
     cd paru-bin && \
     makepkg -si --noconfirm && \
     grep -v '^#' /extra-packages | xargs paru -S --noconfirm
-RUN rm /extra-packages
-
+    
 USER root
+RUN rm /extra-packages
 
 RUN   ln -fs /bin/sh /usr/bin/sh && \
       ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/docker && \
