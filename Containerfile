@@ -7,7 +7,7 @@ LABEL com.github.containers.toolbox="true" \
       
 RUN useradd --shell=/bin/false build && usermod -L build
 RUN mkdir -p /home/build
-RUN chwon build:build /home/build
+RUN chown build:build /home/build
 RUN echo "build ALL=(ALL) NOPASSWD: /usr/bin/pacman" >> /etc/sudoers
 RUN echo "root ALL=(ALL) NOPASSWD: /usr/bin/pacman" >> /etc/sudoers
 
