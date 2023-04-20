@@ -21,8 +21,8 @@ RUN cd ~ && \
     git clone https://aur.archlinux.org/paru-bin.git && \
     cd paru-bin && \
     makepkg -si --noconfirm
-#     grep -v '^#' /extra-packages | xargs paru -S --noconfirm && \
-#     rm -rfv ~/.cache/paru
+    grep -v '^#' /extra-packages | xargs paru -S --noconfirm && \
+    rm -rfv ~/.cache/paru
    
 USER root
 RUN rm /extra-packages
