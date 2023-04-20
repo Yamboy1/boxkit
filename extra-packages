@@ -1,4 +1,3 @@
-age
 atuin
 btop
 bat
@@ -11,15 +10,13 @@ exa
 ffmpeg
 fzf
 github-cli
-helix
 just
-make
 micro
 ncdu
 ncurses
 neofetch
 neovim
-npm
+nvs-git
 plocate
 python3
 ripgrep
@@ -29,3 +26,6 @@ vimdiff
 wl-clipboard
 zellij
 zstd
+jetbrains-fleet
+intellij-idea-ultimate-edition
+visual-studio-code-bin
