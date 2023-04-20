@@ -1,14 +1,17 @@
-FROM quay.io/toolbx-images/alpine-toolbox:edge
+FROM quay.io/toolbx-images/archlinux-toolbox:latest
 
 LABEL com.github.containers.toolbox="true" \
       usage="This image is meant to be used with the toolbox or distrobox command" \
       summary="A cloud-native terminal experience" \
-      maintainer="jorge.castro@gmail.com>"
+      maintainer="yamboyd1@gmail.com"
 
 COPY extra-packages /
-RUN apk update && \
-    apk upgrade && \
-    grep -v '^#' /extra-packages | xargs apk add
+RUN pacman -Syu && \
+    # Install paru so we can use aur stuff
+    git clone https://aur.archlinux.org/paru.git &&
+    cd paru &&
+    makepkg -si --noconfirm
+    grep -v '^#' /extra-packages | xargs paru -S --noconfirm
 RUN rm /extra-packages
 
 RUN   ln -fs /bin/sh /usr/bin/sh && \
