@@ -16,7 +16,7 @@ USER build
 
 RUN cd ~ && \
     pwd && \
-    sudo pacman -Syu && \
+    sudo pacman -Syu --noconfirm && \
     # Install paru so we can use aur stuff
     git clone https://aur.archlinux.org/paru-bin.git && \
     cd paru-bin && \
