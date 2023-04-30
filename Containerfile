@@ -27,7 +27,7 @@ RUN cd ~ && \
 USER root
 RUN rm /extra-packages
 RUN userdel -r build
-RUN head -n -2 /etc/sudoers > /etc/sudoers
+# RUN head -n -2 /etc/sudoers > /etc/sudoers
 # This causes symlink errors currently
 
 # RUN   ln -fs /bin/sh /usr/bin/sh && \
